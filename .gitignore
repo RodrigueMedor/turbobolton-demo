@@ -1,7 +1,5 @@
-# Local Netlify folder
-.netlify
-
-# Build output (regenerate with ./build.sh)
+node_modules/
 dist/
 deploy/
+.netlify
 .DS_Store
