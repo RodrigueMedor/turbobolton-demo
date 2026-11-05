@@ -1,0 +1,27 @@
+<title>TurboBolton MVP Prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;1,700;1,800&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/*__CSS__*/
+</style>
+<div id="demobar">
+  <span class="db-title">TurboBolton <span class="t2">MVP prototype</span> <span class="db-tag">Sample data</span></span>
+  <div class="seg" id="areaseg" role="group" aria-label="Prototype area">
+    <button data-area="brief">Brief</button>
+    <button data-area="store">Storefront</button>
+    <button data-area="admin">Admin portal</button>
+    <button data-area="system">Design system</button>
+  </div>
+  <span class="db-sp"></span>
+  <div class="seg" id="devseg" role="group" aria-label="Device width">
+    <button data-dev="desktop"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg>Desktop</button>
+    <button data-dev="tablet"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2.5" width="16" height="19" rx="2"/><path d="M11 18.5h2"/></svg>Tablet</button>
+    <button data-dev="mobile"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2"/><path d="M11 18.5h2"/></svg>Mobile</button>
+  </div>
+  <button class="db-reset" id="resetDemo"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg>Reset demo</button>
+</div>
+<div id="stage" data-device="desktop"><div id="frame"><div id="app"></div><div id="overlay"></div><div id="toasts" aria-live="polite"></div></div></div>
+<script>
+/*__JS__*/
+</script>
