@@ -3,11 +3,12 @@
    ========================================================== */
 
 /* Hero photo: Sunder Muthukumaran on Unsplash (Unsplash License). Plate blurred. Inlined at build time. */
-const HERO_IMG = '__HERO_IMG__';
+import heroImg from './assets/hero-m4.jpg';
+export const HERO_IMG = heroImg;
 
 /* ---------- Vehicles (Year → Make → Model → Engine) ---------- */
-const YEARS = Array.from({ length: 17 }, (_, i) => 2026 - i);
-const VEHICLES = [
+export const YEARS = Array.from({ length: 17 }, (_, i) => 2026 - i);
+export const VEHICLES = [
   { make: 'BMW', model: 'M3', from: 2021, to: 2025, engines: ['3.0L S58 Twin-Turbo I6 (473 hp)', '3.0L S58 Twin-Turbo I6 Competition (503 hp)'] },
   { make: 'BMW', model: 'M3', from: 2015, to: 2018, engines: ['3.0L S55 Twin-Turbo I6 (425 hp)'] },
   { make: 'BMW', model: 'M4', from: 2021, to: 2025, engines: ['3.0L S58 Twin-Turbo I6 (473 hp)', '3.0L S58 Twin-Turbo I6 Competition (503 hp)'] },
@@ -22,14 +23,14 @@ const VEHICLES = [
   { make: 'Volkswagen', model: 'Golf R', from: 2022, to: 2025, engines: ['2.0L EA888 Turbo I4 (315 hp)'] },
   { make: 'Audi', model: 'RS 3', from: 2022, to: 2025, engines: ['2.5L TFSI Turbo I5 (401 hp)'] },
 ];
-const DEMO_VEHICLE = { year: 2022, make: 'BMW', model: 'M3', engine: '3.0L S58 Twin-Turbo I6 (473 hp)' };
+export const DEMO_VEHICLE = { year: 2022, make: 'BMW', model: 'M3', engine: '3.0L S58 Twin-Turbo I6 (473 hp)' };
 
-function makesFor(y) { return [...new Set(VEHICLES.filter(v => y >= v.from && y <= v.to).map(v => v.make))].sort(); }
-function modelsFor(y, mk) { return [...new Set(VEHICLES.filter(v => v.make === mk && y >= v.from && y <= v.to).map(v => v.model))]; }
-function enginesFor(y, mk, md) { const r = VEHICLES.find(v => v.make === mk && v.model === md && y >= v.from && y <= v.to); return r ? r.engines : []; }
+export function makesFor(y) { return [...new Set(VEHICLES.filter(v => y >= v.from && y <= v.to).map(v => v.make))].sort(); }
+export function modelsFor(y, mk) { return [...new Set(VEHICLES.filter(v => v.make === mk && y >= v.from && y <= v.to).map(v => v.model))]; }
+export function enginesFor(y, mk, md) { const r = VEHICLES.find(v => v.make === mk && v.model === md && y >= v.from && y <= v.to); return r ? r.engines : []; }
 
 /* ---------- Catalog ---------- */
-const CATEGORIES = [
+export const CATEGORIES = [
   { id: 'Engine', icon: 'engine', blurb: 'Intakes, plugs, cooling' },
   { id: 'Exhaust', icon: 'exhaust', blurb: 'Cat-backs, slip-ons, downpipes' },
   { id: 'Suspension', icon: 'spring', blurb: 'Coilovers, springs, sway bars' },
@@ -41,9 +42,9 @@ const CATEGORIES = [
   { id: 'Performance', icon: 'bolt', blurb: 'Intercoolers, turbo upgrades' },
 ];
 
-const G8X = [{ make: 'BMW', model: 'M3', from: 2021, to: 2025 }, { make: 'BMW', model: 'M4', from: 2021, to: 2025 }];
+export const G8X = [{ make: 'BMW', model: 'M3', from: 2021, to: 2025 }, { make: 'BMW', model: 'M4', from: 2021, to: 2025 }];
 
-const PRODUCTS = [
+export const PRODUCTS = [
   {
     id: 'brembo-gt6', sku: 'BRM-1N1.9005A', brand: 'Brembo', cat: 'Brakes', type: 'Big Brake Kit',
     name: 'GT Series 6-Piston Front Big Brake Kit, 380mm Two-Piece Rotors',
@@ -200,33 +201,33 @@ const PRODUCTS = [
   },
 ];
 
-const BRANDS = ['Akrapovič', 'Brembo', 'KW', 'Eventuri', 'HRE', 'Michelin', 'bootmod3', 'NGK', 'Vorsteiner', 'Wagner Tuning', 'Ferodo', 'Motul', 'Sparco', 'Borla'];
+export const BRANDS = ['Akrapovič', 'Brembo', 'KW', 'Eventuri', 'HRE', 'Michelin', 'bootmod3', 'NGK', 'Vorsteiner', 'Wagner Tuning', 'Ferodo', 'Motul', 'Sparco', 'Borla'];
 
-const REVIEWS = [
+export const REVIEWS = [
   { name: 'Chris T.', car: '2022 BMW M3 Competition', stars: 5, date: 'Sep 12, 2026', title: 'Exact fit, no surprises', text: 'Everything lined up with the factory mounting points. TurboBolton confirmed fitment before it shipped, which mattered at this price.' },
   { name: 'Alana R.', car: '2021 BMW M4', stars: 5, date: 'Aug 30, 2026', title: 'Worth it for track days', text: 'Ran three sessions at COTA with no fade. The pedal feels firm and consistent from the first stop to the last lap.' },
   { name: 'Dev P.', car: '2023 BMW M3 Touring', stars: 4, date: 'Jul 18, 2026', title: 'Great product, plan for install time', text: 'Quality is excellent. Installation took my shop longer than quoted, so budget an extra hour.' },
 ];
-const QUESTIONS = [
+export const QUESTIONS = [
   { q: 'Will this fit the Competition xDrive model?', a: 'Yes. Fitment covers all 2021–2025 M3 and M4 variants with the S58 engine, including Competition and xDrive.', by: 'TurboBolton Support' },
   { q: 'Do I need to change anything else when installing?', a: 'Plan for any items listed under Installation. Our support team can review your build before you order.', by: 'TurboBolton Support' },
 ];
 
 /* ---------- Demo customer ---------- */
-const CUSTOMER = {
+export const CUSTOMER = {
   first: 'Daniel', last: 'Okafor', email: 'daniel.okafor@example.com', phone: '(512) 555-0187',
   addr1: '2185 Ridgeview Ave', addr2: 'Unit 4', city: 'Austin', state: 'TX', zip: '78704', country: 'United States',
 };
 
-const SHIP_METHODS = [
+export const SHIP_METHODS = [
   { id: 'standard', name: 'Standard Ground', eta: '5–7 business days', days: [5, 7], cost: 0, note: 'Free on orders over $149' },
   { id: 'expedited', name: 'Expedited', eta: '2–3 business days', days: [2, 3], cost: 24.95 },
   { id: 'overnight', name: 'Overnight', eta: 'Next business day', days: [1, 1], cost: 59.95 },
 ];
-const CARRIERS = ['UPS', 'FedEx', 'USPS', 'DHL'];
+export const CARRIERS = ['UPS', 'FedEx', 'USPS', 'DHL'];
 
 /* ---------- Admin sample orders ---------- */
-const ADMIN_ORDERS = [
+export const ADMIN_ORDERS = [
   { num: 'TB-100481', date: 'Oct 1, 2026 · 9:42 AM', customer: 'Marisol Vega', email: 'm.vega@example.com', items: 2, total: 718.00, status: 'Processing', vehicle: '2020 Toyota GR Supra' },
   { num: 'TB-100480', date: 'Oct 1, 2026 · 8:15 AM', customer: 'Kevin Brandt', email: 'kbrandt@example.com', items: 1, total: 1899.00, status: 'New', vehicle: '2021 Ford Mustang GT' },
   { num: 'TB-100479', date: 'Sep 30, 2026 · 6:03 PM', customer: 'Aisha Rahman', email: 'aisha.r@example.com', items: 4, total: 1436.00, status: 'Shipped', vehicle: '2023 BMW M4' },
@@ -236,7 +237,7 @@ const ADMIN_ORDERS = [
   { num: 'TB-100475', date: 'Sep 29, 2026 · 10:08 AM', customer: 'Hannah Moore', email: 'hmoore@example.com', items: 2, total: 2610.00, status: 'Delivered', vehicle: '2022 Volkswagen Golf R' },
 ];
 
-const ADMIN_SECTIONS = {
+export const ADMIN_SECTIONS = {
   categories: { title: 'Categories', icon: 'grid', action: 'Add category', cols: ['Category', 'Products', 'Visible in menu', 'Status'],
     rows: CATEGORIES.map((c, i) => [c.id, [3, 2, 1, 4, 2, 1, 1, 1, 1][i], 'Yes', 'Active']) },
   brands: { title: 'Brands', icon: 'tag', action: 'Add brand', cols: ['Brand', 'Products', 'Featured on home', 'Status'],
